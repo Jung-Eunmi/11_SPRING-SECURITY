@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.semiprojecttest.animal.model.dao.AnimalMapper">
+
+    <resultMap id="AllListResultMap" type="com.ohgiraffers.semiprojecttest.animal.model.dto.AnimalDTO">
+        <id property="animalCode" column="animal_code"/>
+        <result property="rescueDate1" column="rescue_date"/>
+        <result property="rescueDate2" column="rescue_date"/>
+        <result property="rescueLocation" column="rescue_location"/>
+        <result property="age" column="animal_age"/>
+        <result property="gender" column="animal_gender"/>
+        <result property="animalStatus" column="animal_status"/>
+        <association property="typeDTO" javaType="com.ohgiraffers.semiprojecttest.animal.model.dto.TypeDTO">
+            <id property="typeCode" column="type_code"/>
+            <result property="typeName" column="type_name"/>
+        </association>
+        <association property="breedDTO" javaType="com.ohgiraffers.semiprojecttest.animal.model.dto.BreedDTO">
+            <id property="breedCode" column="breed_code"/>
+            <result property="breedName" column="breed_name"/>
+        </association>
+        <association property="empDTO" javaType="com.ohgiraffers.semiprojecttest.animal.model.dto.EmpDTO">
+            <id property="empCode" column="emp_code"/>
+            <result property="empName" column="emp_name"/>
+        </association>
+    </resultMap>
+
+    <select id="AllList" resultMap="AllListResultMap">
+        SELECT *
+        FROM
+            TBL_ANIMAL A
+        JOIN
+            TBL_EMP E
+        ON
+            A.EMP_CODE = E.EMP_CODE
+        JOIN
+            TBL_ANI_BREED B
+        ON
+            A.BREED_CODE = B.BREED_CODE
+        JOIN
+            TBL_ANI_TYPE T
+        ON
+            A.TYPE_CODE = T.TYPE_CODE;
+    </select>
+
+
+</mapper>
