@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -34,11 +33,7 @@ public class AnimalController {
         return "/animal/list";
     }
 
-    @PostMapping("find")
-    public String FindList(@ModelAttribute AnimalDTO animalDTO) {
 
-//        List<AnimalDTO> findList = animalService.findAnimal(animalDTO);
 
-        return "/animal/find";
-    }
+
 }

@@ -29,19 +29,19 @@
     <select id="AllList" resultMap="AllListResultMap">
         SELECT *
         FROM
-            TBL_ANIMAL A
+        TBL_ANIMAL A
         JOIN
-            TBL_EMP E
+        TBL_EMP E
         ON
-            A.EMP_CODE = E.EMP_CODE
+        A.EMP_CODE = E.EMP_CODE
         JOIN
-            TBL_ANI_BREED B
+        TBL_ANI_BREED B
         ON
-            A.BREED_CODE = B.BREED_CODE
+        A.BREED_CODE = B.BREED_CODE
         JOIN
-            TBL_ANI_TYPE T
+        TBL_ANI_TYPE T
         ON
-            A.TYPE_CODE = T.TYPE_CODE;
+        A.TYPE_CODE = T.TYPE_CODE;
     </select>
 
 

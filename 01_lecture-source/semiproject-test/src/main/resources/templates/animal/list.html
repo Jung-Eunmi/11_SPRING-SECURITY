@@ -6,7 +6,7 @@
     <title>전체 구조동물 조회</title>
 </head>
 <body>
-    <form action="/animal/find" method="post">
+    <form action="animal/list" method="post">
         <label>날짜 : <input type="date" name="rescueDate1"/></label> ~
         <label>날짜 : <input type="date" name="rescueDate2"/></label><br>
 
@@ -16,9 +16,9 @@
             <option value="고양이">고양이</option>
         </select>
         <label>품종 : </label>
-        <select name="animalBreed" id="animalBreed"></select>
+        <select name="breedDTO.breedName" id="breedDTO.breedName"></select>
         <label>성별 : </label>
-        <select name="animalGender">
+        <select name="gender">
             <option value="M">M</option>
             <option value="F">F</option>
         </select><br>
